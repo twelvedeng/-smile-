@@ -78,7 +78,25 @@
 
 3. len()可取列表长度； +可连接列表； *可用于一个列表和整数，实现列表的复制；（和字符串像的性质，+=也可
 
-4. del语句从列表中删除值（改变了列表长度）
+4. 使用range()创建数字列表
+
+   ```python
+   numbers = list(range(1, 6))
+   
+   #将前十个整数的平方加入一个列表
+   squares = []
+   for value in range(1,11):
+       square = value**2
+       squares.append(square)
+       #前两行可squares.append(value**2)
+       
+   #列表解析
+   squares = [value**2 for value in range(1,11)]
+   ```
+
+   
+
+5. del语句从列表中删除值（改变了列表长度）
 
    ```python
    >>> spam = ['c', 'b']
@@ -89,14 +107,14 @@
 
    当del用于简单变量时，等价于‘取消赋值’，把变量的地址也一起删除了（但这个操作基本用不上）
 
-5. for循环遍历输出可以用range(len(somelist))
+6. for循环遍历输出可以用range(len(somelist))
 
    ```python
    for i in range(len(somelist)):
        print(somelist[i])
    ```
 
-6. in和not in判断是否存在一个值x在列表中，返回bool值
+7. in和not in判断是否存在一个值x在列表中，返回bool值
 
    ```python
    >>> spam = ['hello', 'hi', 'blackberry']
@@ -107,9 +125,9 @@
    #bool值记得首字母大写
    ```
 
-7. 列表中缩进不重要，在没有右方括号的时候就代表列表没有结束。
+8. 列表中缩进不重要，在没有右方括号的时候就代表列表没有结束。
 
-8. 行末可用续行字符+\
+9. 行末可用续行字符+\
 
    ```python
    >>> print('Four score and seven '+\
@@ -134,16 +152,18 @@
 
 ```python
 current = ['hapPY', 'Log', 'Milk']
+
+
 #只是输出小写时
 for cur in current:
     print(cur.lower()， end = ', ')
-#结果：happy, log, milk
+结果：happy, log, milk
 
 #错误做法(该做法只在循环内改变了值，改变的值没有存入列表，不能通过列表使用)
 for cur in current:
     cur = cur.lower()
 print(current)
-#结果：['hapPY', 'Log', 'Milk']
+结果：['hapPY', 'Log', 'Milk']
 
 #创建新的列表保存
 now = []
@@ -152,6 +172,7 @@ for cur in current:
     
 #使用原来的列表
 for index in enumerate(current):
+    
     
 ```
 
