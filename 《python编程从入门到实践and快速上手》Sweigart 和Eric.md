@@ -68,7 +68,7 @@
 
 1. 有负数下标，-1表示最后一个数，-2倒数第二个，以此类推。
 
-2. 切片：spam[1, 4]  //前一个数为开始时下标，后一个数为结束时下标（不包括这个数，如：
+2. 切片：可以当列表用，spam[1, 4]  //前一个数为开始时下标，后一个数为结束时下标（不包括这个数，如：
 
    ```python
    spam = ['a', 'b', 'c' ,'d']
@@ -117,6 +117,8 @@
    Four score and seven years ago.
    ```
 
+**{其他}**
+
 列表是可以修改的，他们可以添加、删除、修改值。元组是不可以修改的，他们根本不能被改变。元组使用(),列表使用[]。当要进行类型转换时使用list()和 tuple()函数
 
 ```python
@@ -126,6 +128,31 @@
 ['xi', 5]
 >>> list('xi')
 ['x', 'i']
+```
+
+想要改变一个字符串列表的大小写并且保存到列表时
+
+```python
+current = ['hapPY', 'Log', 'Milk']
+#只是输出小写时
+for cur in current:
+    print(cur.lower()， end = ', ')
+#结果：happy, log, milk
+
+#错误做法(该做法只在循环内改变了值，改变的值没有存入列表，不能通过列表使用)
+for cur in current:
+    cur = cur.lower()
+print(current)
+#结果：['hapPY', 'Log', 'Milk']
+
+#创建新的列表保存
+now = []
+for cur in current:
+    now.append(cur.lower)
+    
+#使用原来的列表
+for index in enumerate(current):
+    
 ```
 
 当元组只有一个整数值42时，如何输入该元组
@@ -171,4 +198,8 @@
 5. copy模块：copy()f复制列表或字典这样的可变值，而不只是复制引用
 
    \deepcopy()深拷贝列表，复制列表内的所有列表
+   
+   
+
+#### 【第五章 if语句】
 
